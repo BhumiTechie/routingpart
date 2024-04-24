@@ -6,7 +6,7 @@ import Nav from './Components/Nav'
 
 const App = () => {
   return (
-    <div>
+    <div className="w-[80%] m-auto h-screen">
       <Nav/>
       <Routes>
         <Route path="/" element={<Home />} />

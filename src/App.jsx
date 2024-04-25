@@ -3,6 +3,7 @@ import Entry from './Components/Entry';
 import Home from './Components/Home';
 import Library from './Components/Library'
 import Nav from './Components/Nav'
+import Details from './Components/Details'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Entry />} />
         <Route path="/show" element={<Library/>} />
-        <Route path = "*" element={<h1>PAge Not FOund</h1>} />
+            <Route path = "/show/:id" element = {<Details/>} />
+            
       </Routes>
     </div>
   )

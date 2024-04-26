@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 const Details = () => {
 	const { id } = useParams();
-	const navigate = useNavigate()
+	const navigate = useNavigate() 
 	const {pathname}= useLocation();
   return (
 	<div>
@@ -14,7 +14,7 @@ const Details = () => {
 			Book Id : <span className='font-extrabold'>{id}</span>
 		</h1>
 		<br />
-		<Link className = "text-blue-500" to = {`${pathname}/profile`}> Profile</Link>
+		<Link className = "text-blue-500 " to = {`${pathname}/profile`}> Profile</Link> <br/>
 		<button className='mt-5 py-3 px-3 bg-red-300' onClick={() => navigate(-1)}> GO BACK</button>
 	</div>
   )

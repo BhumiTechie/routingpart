@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Library = () => {
   return (
-	<div>
+	<div className='h-screeen bg-teal-200'>
     <h1 className='text-2xl'>Library</h1>
     <ul className='m-3 list-none'>
       <li className='list-item'>
@@ -17,7 +17,8 @@ const Library = () => {
       </li>
     </ul>
       <hr />
-     <Outlet/>  
+     <Outlet/>    
+      {/* <Outlet/> mean component within it will render the appropriate "show" component based on the URL. */}
   </div>
   )
 }

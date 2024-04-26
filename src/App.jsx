@@ -1,21 +1,25 @@
-import { Route, Routes } from 'react-router-dom'
-import Entry from './Components/Entry';
-import Home from './Components/Home';
-import Library from './Components/Library'
-import Nav from './Components/Nav'
-import Details from './Components/Details'
 
+import axios from "axios";
+import Nav from './Components/Nav';
+import RoutesComponent from './Routes/RoutesComponent';
 const App = () => {
+  // eslint-disable-next-line no-unused-vars
+  const getusers = async() =>{
+    try {                // try catch using for error handling
+      const { data} = await axios.get("https://jsonplaceholder.typicode.com/users") 
+    
+    console.log(data);
+    } catch (error){
+      console.log(error)
+    }
+     };
+  
   return (
     <div className="w-[80%] m-auto h-screen">
       <Nav/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<Entry />} />
-        <Route path="/show" element={<Library/>} />
-            <Route path = "/show/:id" element = {<Details/>} />
-            
-      </Routes>
+      <hr />
+      <button className="w-28 p-3 bg-green-300" onClick={getusers}>Get users</button>
+      <RoutesComponent/>
     </div>
   )
 }

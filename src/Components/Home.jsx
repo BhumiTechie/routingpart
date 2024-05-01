@@ -1,9 +1,10 @@
 
-import axios from "axios";
-import { useState } from "react";
+import axios from '../Helpers/axios';
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const[ users , setusers] = useState([])
+  
   //  eslint-disable-next-line no-unused-vars
   const getusers = async() =>{
     try {                // try catch using for error handling
@@ -18,7 +19,6 @@ const Home = () => {
      let renderusers = "Loading users...";
      if(users.length > 0){
         //  eslint-disable-next-line no-unused-vars
-        
         renderusers = users.map((user)=>{
         <div className="bg-red-100 p-3 mr-2 mb-2" key={user.id}>
           <h1 className="font-2xl">{user.name}</h1>
@@ -26,6 +26,14 @@ const Home = () => {
         </div>
       })
      }
+   useEffect(()=>{
+    // console.log("HEy")
+    console.log("Home.jsx mounted to ");
+}, [])
+
+// useeffect mean page reload hona!
+console.log("heloo")
+
   return (
 	<div>
     HEY THIS IS A HOME PAGE!

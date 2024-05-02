@@ -1,4 +1,5 @@
 
+
 import axios from '../Helpers/axios';
 import { useEffect, useState } from "react";
 
@@ -42,16 +43,15 @@ const Home = () => {
       
 
 
-     let renderusers = "Loading users...";
-     if(users.length > 0){
-        //  eslint-disable-next-line no-unused-vars
-        renderusers = users.map((user)=>{
-        <div className="bg-red-100 p-3 mr-2 mb-2" key={user.id}>
-          <h1 className="font-2xl">{user.name}</h1>
-          <small>{user.email}</small>
-        </div>
-      })
-     }
+      let renderusers = "Loading users...";
+      if (users.length > 0) {
+        renderusers = users.map((user) => (
+          <div className="border bg-red-100 p-3 mr-2 mb-2" key={user.id}>
+            <h1 className="font-2xl">{user.name}</h1>
+            <small>{user.email}</small>
+          </div>
+        ));
+      }
    useEffect(()=>{
     // console.log("HEy")
     console.log("Home.jsx mounted to ");
@@ -62,11 +62,10 @@ console.log("heloo")
 
   return (
 	<div>
-    HEY THIS IS A HOME PAGE!
     <h1 className='text-2xl font-extrabold'>Homepage</h1>
     <button className=" text-white bg-sky-400 py-2 px-5 my-5" onClick={getusers}>Get Users</button>
     <hr />
-    <div></div> 
+    <div className='flex flex-wrap'>{renderusers}</div> 
   </div>
   )
 }
